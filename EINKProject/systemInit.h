@@ -29,6 +29,7 @@
 
 extern void initSystem();
 extern int getTemperature();
+extern void EPD_display_hardware_init(void);
 
 
 

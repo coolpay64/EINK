@@ -28,7 +28,7 @@
 
 #define Flash_CS_PIN            GPIO_PIN_0
 #define Flash_CS_PORT           GPIO_PORTE_BASE       /**< LaunchPad PE.0  */
-#define EPD_CS_PIN              GPIO_PIN2
+#define EPD_CS_PIN              GPIO_PIN_2
 #define EPD_CS_PORT             GPIO_PORTB_BASE       /**< LaunchPad PB.2  */
 
 #define SPICLK_PIN              GPIO_PIN_4
@@ -42,7 +42,7 @@
 #define EINK_UART				UART1_BASE
 #define EINK_PWM_BASE			PWM1_BASE
 #define EINK_PWM_GEN			PWM_GEN_1
-#define EINK_PWM_BIT			PWM_OUT_2_BIT
+#define EINK_PWM_OUT			PWM_OUT_2_BIT
 #define EINK_ADC_BASE      		ADC0_BASE
 #define EINK_ADC_CH      		ADC_CTL_CH8
 #define EINK_ADC_SEQ      		3

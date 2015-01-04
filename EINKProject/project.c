@@ -54,6 +54,7 @@
 #include "driverlib/adc.h"
 #include "utils/uartstdio.h"
 
+#include "hardwareDriver.h"
 #include "PINConfig.h"
 #include "systemInit.h"
 
@@ -86,17 +87,42 @@ __error__(char *pcFilename, uint32_t ui32Line)
 
 //*****************************************************************************
 //
-// Toggle a GPIO.
+// E-Paper Display Driving Kit
 //
 //*****************************************************************************
+
+void EPDInitSession(void);
+void EPDLoop(void);
+
 int
 main(void)
 {
+	//
+	// Initialize Hardware System
+	//
+	initSystem();
+
+	//
+	// Initialize Interrupts
+	//
+
+	//
+	// Initialize EPD
+	//
+	EPDInitSession();
 
     //
     // Loop forever.
     //
     while(1)
     {
+    	EPDLoop();
     }
+}
+
+void EPDInitSession(void){
+	return;
+}
+void EPDLoop(void){
+	return;
 }

@@ -8,9 +8,23 @@
 #include "systemInit.h"
 #define PWMFREQ	200000
 
+void EPD_display_hardware_init(void) {
+	//EPD_initialize_gpio();
+	EPD_Vcc_turn_off();
+	//epd_spi_init();
+	//initialize_temperature();
+	EPD_cs_low();
+	//EPD_pwm_low();
+	EPD_rst_low();
+	EPD_discharge_low();
+	EPD_border_low();
+	//initialize_EPD_timer();
+}
+
 void initSystem(){
 	int temperature;
-	//Init System Clock
+	//Init System Clock and Stack
+    FPULazyStackingEnable();
 	SysCtlClockSet(SYSCTL_SYSDIV_1|SYSCTL_XTAL_16MHZ|SYSCTL_USE_OSC|SYSCTL_OSC_MAIN);
 	//Init GPIOs
 	PortFunctionInit();
@@ -25,10 +39,15 @@ void initSystem(){
 	PWMGenPeriodSet(EINK_PWM_BASE,EINK_PWM_GEN,SysCtlClockGet()/PWMFREQ);
 	PWMPulseWidthSet(EINK_PWM_BASE,EINK_PWM_OUT,PWMGenPeriodGet(EINK_PWM_BASE,EINK_PWM_GEN)/2);
 	PWMGenEnable(PWM0_BASE, PWM_GEN_0);
-
 	//Init SSI
+	SSIConfigSetExpClk(EINK_SPI, SysCtlClockGet(), SSI_FRF_MOTO_MODE_0,
+	                       SSI_MODE_MASTER, 8000000, 8);
+	SSIEnable(EINK_SPI);
 	//Init UART
+	UARTClockSourceSet(EINK_UART,UART_CLOCK_PIOSC);
+	UARTStdioConfig(EINK_UART,115200,SysCtlClockGet());
 	//Create Default Output
+	EPD_display_hardware_init();
 	//Get Temperature
 	temperature=getTemperature();
 	//Create Temperature Dependent Output
