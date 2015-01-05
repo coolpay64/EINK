@@ -11,10 +11,11 @@
 #define Temper_PIN              GPIO_PIN_5
 #define Temper_PORT             GPIO_PORTE_BASE       /**< LaunchPad PE.5 */
 
-#define PWM_PIN                 GPIO_PIN_6
-#define PWM_PORT                GPIO_PORTA_BASE       /**< LaunchPad PA.6  */
+#define PWM_PIN                 GPIO_PIN_5
+#define PWM_PORT                GPIO_PORTB_BASE       /**< LaunchPad PB.5  */
 
-
+#define EPD_LED_PIN             GPIO_PIN_7
+#define EPD_LED_PORT            GPIO_PORTA_BASE       /**< LaunchPad PA.7 */
 #define EPD_BUSY_PIN            GPIO_PIN_5
 #define EPD_BUSY_PORT           GPIO_PORTA_BASE       /**< LaunchPad PA.5  */
 #define EPD_RST_PIN             GPIO_PIN_7
@@ -39,7 +40,7 @@
 #define SPIMOSI_PORT            GPIO_PORTB_BASE       /**< LaunchPad PB.7  */
 
 #define EINK_SPI				SSI2_BASE
-#define EINK_UART				UART1_BASE
+#define EINK_UART				UART0_BASE
 #define EINK_PWM_BASE			PWM1_BASE
 #define EINK_PWM_GEN			PWM_GEN_1
 #define EINK_PWM_OUT			PWM_OUT_2_BIT

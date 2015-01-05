@@ -38,6 +38,8 @@
 #define EPD_Vcc_turn_off()		MAP_GPIOPinWrite(EPD_PANELON_PORT,EPD_PANELON_PIN,0)
 #define EPD_border_high()		MAP_GPIOPinWrite(EPD_BORDER_PORT,EPD_BORDER_PIN,EPD_BORDER_PIN)
 #define EPD_border_low()		MAP_GPIOPinWrite(EPD_BORDER_PORT,EPD_BORDER_PIN,0)
+#define EPD_led_high()			MAP_GPIOPinWrite(EPD_LED_PORT,EPD_LED_PIN,EPD_LED_PIN)
+#define EPD_led_low()			MAP_GPIOPinWrite(EPD_LED_PORT,EPD_LED_PIN,0)
 
 
 #endif /* HARDWAREDRIVER_H_ */

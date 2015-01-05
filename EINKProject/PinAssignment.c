@@ -56,6 +56,7 @@ PortFunctionInit(void)
     MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_SSI2);
     MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC0);
     //MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_ADC1);
+    MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
     MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_UART1);
     MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_PWM1);
     MAP_SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
@@ -142,4 +143,15 @@ PortFunctionInit(void)
     //
     MAP_GPIOPinConfigure(GPIO_PB1_U1TX);
     MAP_GPIOPinTypeUART(GPIO_PORTB_BASE, GPIO_PIN_1);
+    //
+    // Enable pin PA1 for UART0 U0TX
+    //
+    MAP_GPIOPinConfigure(GPIO_PA1_U0TX);
+    MAP_GPIOPinTypeUART(GPIO_PORTA_BASE, GPIO_PIN_1);
+
+    //
+    // Enable pin PA0 for UART0 U0RX
+    //
+    MAP_GPIOPinConfigure(GPIO_PA0_U0RX);
+    MAP_GPIOPinTypeUART(GPIO_PORTA_BASE, GPIO_PIN_0);
 }

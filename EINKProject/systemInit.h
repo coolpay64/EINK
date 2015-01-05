@@ -18,16 +18,19 @@
 #include "driverlib/rom.h"
 #include "driverlib/rom_map.h"
 #include "driverlib/sysctl.h"
+#include "driverlib/systick.h"
 #include "driverlib/uart.h"
 #include "driverlib/ssi.h"
 #include "driverlib/pwm.h"
 #include "driverlib/adc.h"
 #include "utils/uartstdio.h"
+#include "driverlib/interrupt.h"
 
 #include "PINConfig.h"
 #include "hardwareDriver.h"
 
 extern void initSystem();
+extern void initInterrupt();
 extern int getTemperature();
 extern void EPD_display_hardware_init(void);
 
