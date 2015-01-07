@@ -89,7 +89,7 @@ void initSystem(){
 	//Init SSI
 	SSIClockSourceSet (EINK_SSI, SSI_CLOCK_SYSTEM);
 	SSIConfigSetExpClk(EINK_SSI, SysCtlClockGet(), SSI_FRF_MOTO_MODE_3,
-                       SSI_MODE_MASTER, 1000000, 8);
+                       SSI_MODE_MASTER, 2000000, 16);
 
     //
     // Enable the SSI0 module.
